@@ -14,8 +14,8 @@ public:
   polymap(uint8 significantFigures = 2, uint8_t resolution = 0);
   void calcAllVals();
   void storeConstants(double offset, double E1, double E2, double E3);
-  double ReturnPolylookup(int lookup);
-  double ReturnPolyCalc(double lookup);
+  short ReturnPolylookup(int lookup);
+  short ReturnPolyCalc(double x);
 
 private:
   int _resolution;
