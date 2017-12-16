@@ -11,28 +11,25 @@
 class polymap
 {
 public:
-  polymap(uint8 significantFigures = 2, uint8_t resolution = 0);
+  polymap(short Range[], short resolution );
   void calcAllVals();
-  void storeConstants(double offset, double E1, double E2, double E3);
+  void polymap::storeConstants(short Constants[]);
   short ReturnPolylookup(int lookup);
   short ReturnPolyCalc(double x);
-
+  
+  
 private:
+  uint inputToArrayAddress(short input);
   int _resolution;
-  double _polyMapArray[];
+  short _polyMapArray[];
   int _resolution;
   int _significantFigures;
+  short _E[]; // constants
+  short _MinInput;
+  short _MaxInput;
+  int _ConstElements; // number of constant elements
+  uint _sizeofPolyMapArray;
+  
 };
 
 #endif
-
-/* int Constants[6][3] =  {
-  {0, 0, 0} // offset
-  {0, 0, 0} // E1
-  {0, 0, 0} // E2
-  {0, 0, 0} //
-  {0, 0, 0}
-  {0, 0, 0}
-  {0, 0, 0}
-
-} */
