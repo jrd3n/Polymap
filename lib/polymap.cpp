@@ -26,7 +26,7 @@ double polymap::ReturnPolylookup(int lookup)
   return _polyMapArray[lookup];
 }
 
-void polymap::storeConstants()
+void polymap::storeConstants(double offset, double E1, double E2, double E3)
 {
 }
 
