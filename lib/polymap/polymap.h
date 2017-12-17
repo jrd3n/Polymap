@@ -11,25 +11,25 @@
 class polymap
 {
 public:
-  polymap(short Range[], short resolution );
+  polymap(short Range[], short resolution);
   void calcAllVals();
-  void polymap::storeConstants(short Constants[]);
+  void storeConstants(float Constants[], int polynomialDegree);
   short ReturnPolylookup(int lookup);
   short ReturnPolyCalc(double x);
-  
-  
+
 private:
   uint inputToArrayAddress(short input);
+
   int _resolution;
   short _polyMapArray[];
-  int _resolution;
   int _significantFigures;
   short _E[]; // constants
+
+  int _polynomialDegrees; // number of polynomialDegrees
+  short _sizeofPolyMapArray;
+
   short _MinInput;
   short _MaxInput;
-  int _ConstElements; // number of constant elements
-  uint _sizeofPolyMapArray;
-  
 };
 
 #endif

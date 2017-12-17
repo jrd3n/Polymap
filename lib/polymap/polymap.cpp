@@ -29,11 +29,11 @@ short polymap::ReturnPolylookup(int lookup) // ERROR IN THIS FUNCTION
   return _polyMapArray[lookup];
 }
 
-void polymap::storeConstants(short Constants[])
+void polymap::storeConstants(float Constants[], int polynomialDegree)
 {
-  _ConstElements = sizeof(Constants) / sizeof(short);
+  _polynomialDegrees = polynomialDegree;
 
-  for (int i = 0; i <= _ConstElements; i++)
+  for (int i = 0; i <= _polynomialDegrees; i++)
   {
     _E[i] = Constants[i];
   }
@@ -41,30 +41,17 @@ void polymap::storeConstants(short Constants[])
 
 short polymap::ReturnPolyCalc(double X)
 {
+  short y = 0;
 
-  double Y = 0;
-
-  for (int i = _ConstElements; i = 0; i--)
+  for (int i = 0; i > _polynomialDegrees; i++)
   {
-    Y = +_E[i] * pow(X, i);
+    y = +_E[i] * pow(X, i);
   }
 
-  /*
-  Y = _E[6] * pow(X, 6);
-  Y = +_E[5] * pow(X, 5);
-  Y = +_E[4] * pow(X, 4);
-  Y = +_E[3] * pow(X, 3);
-  Y = +_E[2] * pow(X, 2);
-  Y = +_E[1] * pow(X, 1);
-  Y = +_E[0] * pow(X, 0);
-  */
-
-  return Y;
+  return y;
 }
 
-uint inputToArrayAddress(short input)
+uint polymap::inputToArrayAddress(short input)
 {
-  short y = input - _MinInput;
-
-  return y;
+  return map(input, _MinInput, _MaxInput, 0, _sizeofPolyMapArray);
 }
