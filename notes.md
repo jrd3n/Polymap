@@ -12,6 +12,7 @@
 
 data used;
 
+| measured values | sensor value |
 | --- | --- |
 | 10 | 1 |
 | 9   | 2 |
