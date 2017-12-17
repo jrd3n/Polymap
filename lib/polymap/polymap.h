@@ -13,23 +13,21 @@ class polymap
 public:
   polymap(short Range[], short resolution);
   void calcAllVals();
-  void storeConstants(float Constants[], int polynomialDegree);
+  void storeConstants(double Constants[], int polynomialDegree);
   short ReturnPolylookup(int lookup);
-  short ReturnPolyCalc(double x);
+  double ReturnPolyCalc(double x);
 
 private:
   uint inputToArrayAddress(short input);
-
-  int _resolution;
+  int _resolution = 1;
   short _polyMapArray[];
-  int _significantFigures;
-  short _E[]; // constants
+  int _significantFigures = 2;
+  double _E[]; // constants
 
-  int _polynomialDegrees; // number of polynomialDegrees
-  short _sizeofPolyMapArray;
-
-  short _MinInput;
-  short _MaxInput;
+  int _polynomialDegrees = 0; // number of polynomialDegrees
+  short _sizeofPolyMapArray = 0;
+  short _MinInput = 0;
+  short _MaxInput= 0;
 };
 
 #endif

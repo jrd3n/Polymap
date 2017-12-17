@@ -1,13 +1,13 @@
 #include <Arduino.h>
 #include <polymap.h>
 
-const PROGMEM float PolyArray[] = {1, 2, 3, 4, 5, 6, 7, 8, 9} ;
+const PROGMEM double PolyArray[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-float polynomialConstants[] = {4.1428571428767373e+000,  // these are the polynomial polynomialconstants, Offset
-                               1.3047619047510288e+000,  // E1
-                               -2.5714285714116780e-001, // E2
-                               9.5238095237296320e-003}; // E3
-
+double polynomialConstants[] = { // these are the polynomial constants,
+    1.0000000000000000e+001,    // Offset
+    -1.9952380952380973e+000,    // first degree
+    1.0952380952380976e-001};   // second degree
+    
 short Range[] = {
     0,   // lowest value of input information
     1023 // highest value of input information
@@ -19,21 +19,23 @@ polymap Transducer(Range, increments); // create instance of polymap class name 
 
 void setup()
 {
-    // put your setup code here, to run once:
-    Transducer.storeConstants(polynomialConstants, 4);
-   // Transducer.calcAllVals();
-
     Serial.begin(115200);
+    Serial.println("connected");
+    // put your setup code here, to run once:
+    Transducer.storeConstants(polynomialConstants, 2);
+    // Transducer.calcAllVals();
+
+        for (int i = 0; i < 10; i++)
+    {
+        Serial.print(i);
+        Serial.print(" = ");
+
+        Serial.println(Transducer.ReturnPolyCalc(i));
+    }
 }
 
 void loop()
 {
-    for (int i = 0; i > 10; i++){
-        Serial.print(i);
-        Serial.print(" = ");
-        Serial.println(Transducer.ReturnPolyCalc(i));
-        delay(200);
-    }
 
     // put your main code here, to run repeatedly:
 }

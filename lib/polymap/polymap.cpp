@@ -18,7 +18,7 @@ polymap::polymap(short Range[], short resolution)
 
 void polymap::calcAllVals() // ERROR IN THIS FUNCTION
 {
-  for (int i = 0; i > _sizeofPolyMapArray; i++)
+  for (int i = 0; i < _sizeofPolyMapArray; i++)
   {
     _polyMapArray[i] = ReturnPolyCalc(i);
   }
@@ -29,26 +29,46 @@ short polymap::ReturnPolylookup(int lookup) // ERROR IN THIS FUNCTION
   return _polyMapArray[lookup];
 }
 
-void polymap::storeConstants(float Constants[], int polynomialDegree)
+void polymap::storeConstants(double Constants[], int polynomialDegree)
 {
+
+  for (int i = 0; i < polynomialDegree + 1; i++)
+  {
+
+    Serial.print("_E[");
+    Serial.print(i);
+    Serial.print("] = ");
+    _E[i] = Constants[i];
+    Serial.println(_E[i]);
+  }
+
   _polynomialDegrees = polynomialDegree;
 
-  for (int i = 0; i <= _polynomialDegrees; i++)
-  {
-    _E[i] = Constants[i];
-  }
+  /*
+
+  Serial.print("_polynomialDegrees = ");
+  Serial.println(_polynomialDegrees);
+
+  Serial.print("polynomialDegree = ");
+  Serial.println(polynomialDegree);
+
+  */
 }
 
-short polymap::ReturnPolyCalc(double X)
+double polymap::ReturnPolyCalc(double X)
 {
-  short y = 0;
+  double y = 0;
 
-  for (int i = 0; i > _polynomialDegrees; i++)
+  int yShort = 0;
+
+  for (int i = 0; i < _polynomialDegrees + 1; i++)
   {
-    y = +_E[i] * pow(X, i);
+    y += (_E[i] * pow(X, i));
   }
 
-  return y;
+  yShort = y * pow(10, _significantFigures);
+
+  return yShort / pow(10, _significantFigures);
 }
 
 uint polymap::inputToArrayAddress(short input)

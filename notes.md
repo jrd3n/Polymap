@@ -14,22 +14,21 @@
 
 | measured values | sensor value |
 | --- | --- |
+| 0 | 10 |
+| 3 | 5 |
 | 10 | 1 |
-| 9   | 2 |
-|8  |3 |
-| 3 | 6 |
 
-1. set to 3 degrees
+1. set to 2 degrees
 
 the output is this;
 
 ```
 double f(double x) {
-   return  4.1428571428767373e+000 * pow(x,0)
-        +  1.3047619047510288e+000 * pow(x,1)
-        + -2.5714285714116780e-001 * pow(x,2)
-        +  9.5238095237296320e-003 * pow(x,3);
+   return  1.0000000000000000e+001 * Math.pow(x,0)
+        + -1.9952380952380973e+000 * Math.pow(x,1)
+        +  1.0952380952380976e-001 * Math.pow(x,2);
 }
+
 ```
 these are our polynomal constants.
 
