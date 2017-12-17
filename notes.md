@@ -23,16 +23,16 @@
 
 the output is this;
 
-'''
- double f(double x) {
+```
+
+double f(double x) {
    return  4.1428571428767373e+000 * pow(x,0)
         +  1.3047619047510288e+000 * pow(x,1)
         + -2.5714285714116780e-001 * pow(x,2)
         +  9.5238095237296320e-003 * pow(x,3);
-} 
+}
 
-'''
-
+```
 these are our polynomal constants.
 
 ## Notes
