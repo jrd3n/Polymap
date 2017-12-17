@@ -1,6 +1,8 @@
 #include <Arduino.h>
 #include <polymap.h>
 
+const PROGMEM float PolyArray[] = {1,2,3,4,5,6,7,8,9}
+
 short Range[] = {0, // lowest value of input information
                  1023 // highest value of input information
 } // for analog input the range is from 0 to 1023
@@ -14,7 +16,7 @@ short polynomialConstants[] = {0, // these are the polynomial polynomialconstant
                                0, // E4
                                0} // E5
 
-polymap Transducer(Range[], increments ); // create instance of polymap class name it after the sensor
+polymap Transducer(Range, increments ); // create instance of polymap class name it after the sensor
 
 void setup()
 {

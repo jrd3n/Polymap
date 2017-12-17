@@ -1,3 +1,13 @@
+#design brief
+
+##Targets
+
+1. generate polynomial results from the constants and X
+2. generate an array that can be stored in PROGMEM
+3. use the array to lookup value rather than calculate.
+
+##Notes
+
 short polyMap (double X) {
 
 double Y = P[6].toInt() * pow(X, 6);
