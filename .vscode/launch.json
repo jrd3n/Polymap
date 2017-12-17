@@ -6,8 +6,8 @@
             "request": "launch",
             "cwd": "${workspaceRoot}",
             "name": "PlatformIO Debugger",
-            "target": "/home/jordon/Polymap/.pioenvs/d1_mini/firmware.elf",
-            "gdbpath": "/home/jordon/.platformio/penv/bin/piodebuggdb",
+            "target": "c:/Users/jrd3n/Polymap/.pioenvs/d1_mini/firmware.elf",
+            "gdbpath": "C:/Users/jrd3n/.platformio/penv/Scripts/piodebuggdb",
             "autorun": [ "source .pioinit" ]
         }
     ]

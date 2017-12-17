@@ -6,6 +6,19 @@
 2. generate an array that can be stored in PROGMEM
 3. use the array to lookup value rather than calculate.
 
+##Useful websites
+
+<https://arachnoid.com/polysolve/>
+
+data used;
+
+
+
+| 10 | 1 |
+| 9   | 2 |
+|8  |3 |
+| 3 | 6 |
+
 ##Notes
 
 short polyMap (double X) {
