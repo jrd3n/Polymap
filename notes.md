@@ -1,12 +1,12 @@
-#design brief
+# design brief
 
-##Targets
+## Targets
 
 1. generate polynomial results from the constants and X
 2. generate an array that can be stored in PROGMEM
 3. use the array to lookup value rather than calculate.
 
-##Useful websites
+## Useful websites
 
 <https://arachnoid.com/polysolve/>
 
@@ -19,7 +19,7 @@ data used;
 |8  |3 |
 | 3 | 6 |
 
-##Notes
+## Notes
 
 short polyMap (double X) {
 
