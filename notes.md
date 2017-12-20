@@ -67,3 +67,16 @@ double Y = P[6].toInt() * pow(X, 6);
 
   return Y;
 }
+
+# headings for library
+
+1. PolyMap (initialize)
+1. Begin
+1. Read.
+1. Zero
+1. End.
+
+
+
+
+
